@@ -1,8 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+// app imports
+import LandingApp from "./containers/LandingApp";
+import registerServiceWorker from "./registerServiceWorker";
+import "./index.css";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+// render app
+ReactDOM.render(<LandingApp />, document.getElementById("root"));
+
+// register service worker
 registerServiceWorker();
