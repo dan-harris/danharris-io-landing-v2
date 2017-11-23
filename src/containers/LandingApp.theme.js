@@ -2,6 +2,23 @@ import { css } from "styled-components";
 
 // theme settings
 const theme = {
+  padding: 2, //rem
+  margin: 2, //rem
+  color: {
+    primary: "#865CD6",
+    secondary: "#595959",
+    accent1: "#7F7F7F",
+    accent2: "#A6A6A6"
+  },
+  icon: {
+    color: () => theme.color.primary,
+    size: {
+      large: "36px"
+    },
+    extend: css`
+      ${props => props.color === "inverse" && `stroke: white;`};
+    `
+  },
   layout: {
     breakpoints: {
       xs: 0, // rem

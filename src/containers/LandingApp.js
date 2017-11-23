@@ -14,9 +14,10 @@ import IconTray from "./IconTray";
 const Wrapper = styled(Row)`
   height: 100%;
   max-width: 100%;
+  color: ${props => props.theme.color.accent1};
 `;
 const InnerWrapper = styled.div`
-  width: 400px;
+  width: 700px;
 `;
 
 // main app component
