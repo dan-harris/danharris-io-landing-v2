@@ -17,7 +17,7 @@ const Wrapper = styled(Row)`
   color: ${props => props.theme.color.accent1};
 `;
 const InnerWrapper = styled.div`
-  max-width: 700px;
+  width: 700px;
 `;
 
 // main app component
