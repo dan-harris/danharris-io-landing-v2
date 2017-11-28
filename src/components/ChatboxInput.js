@@ -44,7 +44,7 @@ class ChatBoxInput extends Component {
       <Wrapper>
         <Input
           type="text"
-          placeholder="Well hello there…"
+          placeholder="Interactivity coming soon..."
           disabled={this.state.disabled}
         />
         <InputButton disabled={this.state.disabled}>
