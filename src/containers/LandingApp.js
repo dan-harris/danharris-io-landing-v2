@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { Row, Col } from "react-flexa";
 // app imports
+import { media } from "../containers/LandingApp.theme";
 // theme for landing app
 import theme from "./LandingApp.theme";
 // components
@@ -15,9 +16,18 @@ const Wrapper = styled(Row)`
   height: 100%;
   max-width: 100%;
   color: ${props => props.theme.color.accent1};
+
+  ${media.xs`
+    margin-left: 10px;
+    margin-right: 10px;    
+  `};
 `;
-const InnerWrapper = styled.div`
-  width: 700px;
+const InnerWrapper = styled(Col)`
+  margin: auto auto;
+
+  ${media.md`
+    width: 700px;
+  `};
 `;
 
 // main app component
@@ -26,9 +36,11 @@ class LandingApp extends Component {
     return (
       <ThemeProvider theme={theme}>
         <Wrapper
-          justifyContent="center"
-          alignItems="center"
-          flexDirection="column"
+          justifyContent={{ xs: "center" }}
+          alignContent={{ xs: "center" }}
+          alignItems={{ xs: "center" }}
+          flexDirection={{ xs: "column" }}
+          display={{ xs: "flex" }}
         >
           <InnerWrapper>
             <Col>

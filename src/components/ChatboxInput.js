@@ -34,11 +34,20 @@ const InputButton = styled.button`
 `;
 
 class ChatBoxInput extends Component {
+  constructor() {
+    super();
+    this.state = { disabled: true };
+  }
+
   render() {
     return (
       <Wrapper>
-        <Input type="text" placeholder="Well hello there…" />
-        <InputButton>
+        <Input
+          type="text"
+          placeholder="Interactivity coming soon..."
+          disabled={this.state.disabled}
+        />
+        <InputButton disabled={this.state.disabled}>
           <Play color="inverse" />
         </InputButton>
       </Wrapper>
