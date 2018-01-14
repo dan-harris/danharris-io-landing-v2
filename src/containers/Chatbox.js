@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 // app imports
 import ChatBoxInput from "../components/ChatboxInput";
+import { getDadJokes } from "../api/Reddit";
 
 // styled directives
 const Wrapper = styled.div`
@@ -14,12 +15,14 @@ const ChatBoxLine = styled.p`
   margin: ${props => props.theme.padding * 0.125}rem 0;
 `;
 
-// url to retrive data from
-const DAD_JOKES_URL = "https://www.reddit.com/r/dadjokes/hot.json?limit=20";
-
 // max length constants
 const MAX_QUESTION_CHAR_LENGTH = 43;
 const MAX_ANSWER_CHAR_LENGTH = 43;
+// default joke for display
+const DEFAULT_JOKE = {
+  question: "What do you call a belt made of watches?",
+  answer: "A waist of time."
+};
 
 class ChatBox extends Component {
   constructor() {
@@ -34,8 +37,8 @@ class ChatBox extends Component {
   }
 
   componentDidMount() {
-    // fetch data on component mount
-    this.fetchDadJokes();
+    // fetch data & set state on component mount
+    this.setDadJokes();
   }
 
   render() {
@@ -49,13 +52,9 @@ class ChatBox extends Component {
     );
   }
 
-  fetchDadJokes() {
-    // fetch data from r/dadjokes
-    fetch(DAD_JOKES_URL)
-      // convert result to json
-      .then(results => results.json())
-      // get the array of posts data
-      .then(resultsJson => resultsJson.data.children)
+  setDadJokes() {
+    // get dad jokes from API
+    getDadJokes()
       // filter array so only those with correct length question/answers are available
       .then(resultsArray =>
         resultsArray.filter(
@@ -74,10 +73,7 @@ class ChatBox extends Component {
       // set state
       .then(randomJoke => {
         // default joke
-        let joke = {
-          question: "What do you call a belt made of watches?",
-          answer: "A waist of time."
-        };
+        let joke = DEFAULT_JOKE;
 
         // use the random one if we have it
         if (randomJoke && randomJoke.data && randomJoke.data.title)
