@@ -80,7 +80,7 @@ class ChatBox extends Component {
         };
 
         // use the random one if we have it
-        if (randomJoke)
+        if (randomJoke && randomJoke.data && randomJoke.data.title)
           joke = {
             question: randomJoke.data.title,
             answer: randomJoke.data.selftext

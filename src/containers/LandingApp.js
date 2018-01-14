@@ -7,9 +7,9 @@ import { media } from "../containers/LandingApp.theme";
 import theme from "./LandingApp.theme";
 // components
 import Header from "../components/Header";
+import IconTray from "../components/IconTray";
 // containers
 import ChatBox from "./Chatbox";
-import IconTray from "./IconTray";
 
 // styled directives - layout wrappers
 const Wrapper = styled(Row)`
