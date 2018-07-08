@@ -8,14 +8,13 @@ import theme from "./LandingApp.theme";
 // components
 import Header from "../components/Header";
 import IconTray from "../components/IconTray";
-// containers
-import ChatBox from "./Chatbox";
 
-// styled directives - layout wrappers
+// styled directives
+// layout wrappers
 const Wrapper = styled(Row)`
   height: 100%;
   max-width: 100%;
-  color: ${props => props.theme.color.accent1};
+  color: ${props => props.theme.color.white};
 
   ${media.xs`
     margin-left: 10px;
@@ -45,9 +44,6 @@ class LandingApp extends Component {
           <InnerWrapper>
             <Col>
               <Header />
-            </Col>
-            <Col>
-              <ChatBox />
             </Col>
             <Col>
               <IconTray />
