@@ -17,23 +17,39 @@ const MEDIUM_LINK = "https://medium.com/@danharris_io";
 const LINKEDIN_LINK = "https://www.linkedin.com/in/dan-harris";
 
 // styled directives
+// layout wrapper
 const Wrapper = styled.div`
-  margin: ${props => props.theme.padding}rem 0;
   display: flex;
   justify-content: space-between;
 
   ${media.xs`
     padding: 0 0;    
+    margin: ${props => props.theme.padding * 0.8}rem 0;
   `};
 
   ${media.md`
     padding: 0 ${props => props.theme.padding}rem;
+    margin: ${props => props.theme.padding}rem 0;
   `};
 `;
+
+// grommet icon wrapper with link
 const IconLink = styled.a`
+  opacity: 0.1;
+
   &:hover {
-    fill-opacity: 0.9;
+    opacity: 0.9;
   }
+
+  ${media.xs`
+    height: 1.75rem;
+    width: 1.75rem;    
+  `};
+
+  ${media.md`
+    height: 3rem;
+    width: 3rem;   
+  `};
 `;
 
 class IconTray extends Component {

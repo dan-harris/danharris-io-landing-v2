@@ -13,6 +13,26 @@
   <link rel="icon" type="image/png" sizes="96x96" href="%PUBLIC_URL%/favicon-96x96.png">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,500" rel="stylesheet">
   <title>danharris.io</title>
+  <style>
+    html {
+      background-color: #4c5096;
+    }
+
+    #root {
+      transition: opacity .6s;
+      opacity: 0;
+    }
+  </style>
+  <script>
+    function checkHasLoaded() {
+      var hasLoaded = document.getElementById('root').children.length > 0;
+      setTimeout(function () {
+        if (hasLoaded) document.getElementById('root').style.opacity = '1';
+        else checkHasLoaded();
+      }, 500);
+    }
+    document.addEventListener("DOMContentLoaded", checkHasLoaded);
+  </script>
 </head>
 
 <body>

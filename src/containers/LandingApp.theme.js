@@ -2,18 +2,20 @@ import { css } from "styled-components";
 
 // theme settings
 const theme = {
-  padding: 2, //rem
-  margin: 2, //rem
+  padding: 2.5, //rem
+  margin: 2.5, //rem
   color: {
-    primary: "#865CD6",
+    primary: "#4c5096",
     secondary: "#595959",
     accent1: "#7F7F7F",
-    accent2: "#A6A6A6"
+    accent2: "#A6A6A6",
+    white: "#fff"
   },
   icon: {
-    color: () => theme.color.primary,
+    color: "#fff",
+    colors: { brand: "#fff" },
     size: {
-      large: "36px"
+      large: "100%"
     },
     extend: css`
       ${props => props.color === "inverse" && `stroke: white;`};
